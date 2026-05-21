@@ -12,10 +12,12 @@ while True:
 
     match opcao_usuario:
         case 1:
-            pass
+            funcoes.cadastrar(contatos)
         case 2:
+            funcoes.limpar_terminal()
             funcoes.listar_contatos(contatos)
             input('Aperte ENTER... Para continuar!')
+            funcoes.limpar_terminal()
         case 3:
             pass
         case 4:
