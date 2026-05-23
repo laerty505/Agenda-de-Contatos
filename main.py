@@ -18,8 +18,9 @@ while True:
             funcoes.listar_contatos(contatos)
             input('Aperte ENTER... Para continuar!')
             funcoes.limpar_terminal()
+            
         case 3:
-            pass
+            funcoes.excluir_contato(contatos)
         case 4:
             pass
         case 5:
