@@ -31,6 +31,7 @@ def cadastrar(contatos):
     limpar_terminal()
     print('Cadastro efetuado com sucesso!')
     input('Aperte ENTER para continuar...')
+    limpar_terminal()
 
     novo_contato = [nome, telefone, email]
     contatos.append(novo_contato)
@@ -47,14 +48,18 @@ def excluir_contato(contatos):
         print('Ou digite "N" para cancelar.')
 
         entrada = input('Índice: ').strip().upper()
+        limpar_terminal()
 
         if entrada == 'N':
             print('Operação cancelada.')
             break
 
         if entrada in ('INDICE', 'ÍNDICE'):
+            limpar_terminal()
             mostrar_indice_contato(contatos)
             input('Aperte ENTER... para continuar')
+            limpar_terminal()
+            continue
 
         try:
             indice = int(entrada)
@@ -64,6 +69,7 @@ def excluir_contato(contatos):
 
         if not (0 <= indice < len(contatos)):
             print(f'Índice inválido! Escolha entre 0 e {len(contatos) - 1}.')
+            print()
             continue
 
 
