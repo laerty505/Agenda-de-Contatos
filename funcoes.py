@@ -43,13 +43,18 @@ def excluir_contato(contatos):
 
     while True:
         print('Digite o índice do contato que deseja excluir!')
+        print('Digite "Indice" para ver os índices!')
         print('Ou digite "N" para cancelar.')
 
-        entrada = input('Índice: ').strip()
+        entrada = input('Índice: ').strip().upper()
 
-        if entrada.upper() == 'N':
+        if entrada == 'N':
             print('Operação cancelada.')
             break
+
+        if entrada in ('INDICE', 'ÍNDICE'):
+            mostrar_indice_contato(contatos)
+            input('Aperte ENTER... para continuar')
 
         try:
             indice = int(entrada)
@@ -70,8 +75,12 @@ def excluir_contato(contatos):
 
 
 
-
-
-
 def limpar_terminal():
     os.system('cls' if os.name == 'nt' else 'clear')
+
+
+def mostrar_indice_contato(contatos):
+    for indice, nome in enumerate(contatos):
+        print(f'Índice: {indice}')
+        print(f'Contato: {nome}')
+        print()
