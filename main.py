@@ -25,7 +25,8 @@ while True:
             funcoes.limpar_terminal()
             funcoes.excluir_contato(contatos)
         case 4:
-            pass
+            funcoes.limpar_terminal()
+            funcoes.editar_contato(contatos)
         case 5:
             funcoes.limpar_terminal()
             print('Encerrando...')
@@ -33,6 +34,8 @@ while True:
         case _:
             funcoes.limpar_terminal()
             print('Digite um número válido!')
+
+
 
    
 
