@@ -33,6 +33,7 @@ while True:
         case _:
             funcoes.limpar_terminal()
             print('Digite um número válido!')
+
    
 
 

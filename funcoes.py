@@ -92,3 +92,49 @@ def mostrar_indice_contato(contatos):
         print(f'Telefone: {nome[1]}')
         print(f'Email: {nome[2]}')
         print()
+
+
+def editar_contato(contatos):
+    if not contatos:
+        print('Não há contatos para editar.')
+        return
+    
+    while True:
+        print('Digite o índice do contato que deseja editar!')
+        print('Digite "Indice" para ver os índices!')
+        print('Ou digite "N" para cancelar.')
+
+        entrada = input('Índice: ').strip().upper()
+        limpar_terminal()
+
+        if entrada == 'N':
+            print('Operação cancelada.')
+            break
+
+        if entrada in ('INDICE', 'ÍNDICE'):
+            limpar_terminal()
+            mostrar_indice_contato(contatos)
+            input('Aperte ENTER... para continuar')
+            limpar_terminal()
+            continue
+
+        try:
+            indice = int(entrada)
+        except ValueError:
+            print('Entrada inválida! Digite um número ou "N" para cancelar.')
+            continue
+
+        if not (0 <= indice < len(contatos)):
+            print(f'Índice inválido! Escolha entre 0 e {len(contatos) - 1}.')
+            print()
+            continue
+
+        nome = input('Digite o novo nome: ')
+        telefone = input('Digite o novo telefone: ')
+        email = input('Digite o novo email: ')
+
+        contatos[indice] = [nome, telefone, email]
+        print(f'O contato {nome} foi editado com sucesso!')
+        input('Digite ENTER... Para continuar')
+        limpar_terminal()
+        break
