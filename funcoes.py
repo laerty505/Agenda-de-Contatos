@@ -88,5 +88,7 @@ def limpar_terminal():
 def mostrar_indice_contato(contatos):
     for indice, nome in enumerate(contatos):
         print(f'Índice: {indice}')
-        print(f'Contato: {nome}')
+        print(f'Contato: {nome[0]}')
+        print(f'Telefone: {nome[1]}')
+        print(f'Email: {nome[2]}')
         print()
