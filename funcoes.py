@@ -137,7 +137,7 @@ def editar_contato(contatos):
         email = input('Digite o novo email: ')
 
         contatos[indice] = [nome, telefone, email]
-        salvar_contatos()
+        salvar_contatos(contatos)
         print(f'O contato {nome} foi editado com sucesso!')
         input('Digite ENTER... Para continuar')
         limpar_terminal()
