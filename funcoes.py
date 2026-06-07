@@ -1,5 +1,6 @@
 import os
 
+ARQUIVO = "contatos.txt"
 
 def menu():
     print("=====AGENDA DE CONTATOS=====")
@@ -35,6 +36,7 @@ def cadastrar(contatos):
 
     novo_contato = [nome, telefone, email]
     contatos.append(novo_contato)
+    salvar_contatos(contatos)
 
 
 def excluir_contato(contatos):
@@ -76,6 +78,7 @@ def excluir_contato(contatos):
         print(f'O contato {contatos[indice][0]} foi excluído com sucesso!')
         input('Digite ENTER... Para continuar')
         contatos.pop(indice)
+        salvar_contatos(contatos)
         limpar_terminal()
         break
 
@@ -134,7 +137,30 @@ def editar_contato(contatos):
         email = input('Digite o novo email: ')
 
         contatos[indice] = [nome, telefone, email]
+        salvar_contatos()
         print(f'O contato {nome} foi editado com sucesso!')
         input('Digite ENTER... Para continuar')
         limpar_terminal()
         break
+
+def salvar_contatos(contatos):
+    with open(ARQUIVO, "w", encoding="utf-8") as arquivo:
+        for contato in contatos:
+            linha = ";".join(contato)
+            arquivo.write(linha + "\n")
+
+def carregar_contatos():
+    contatos = []
+
+    if not os.path.exists(ARQUIVO):
+        return contatos
+
+    with open(ARQUIVO, "r", encoding="utf-8") as arquivo:
+        for linha in arquivo:
+            linha = linha.strip()
+
+            if linha:
+                contato = linha.split(";")
+                contatos.append(contato)
+
+    return contatos

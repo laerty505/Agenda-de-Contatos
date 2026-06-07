@@ -1,9 +1,6 @@
 import funcoes
 
-contatos = [
-    ["Laerty", "91234-5678", "laerty@gmail.com"]
-]
-
+contatos = funcoes.carregar_contatos()
 while True:
     funcoes.limpar_terminal()
     funcoes.menu()
