@@ -4,10 +4,13 @@ contatos = funcoes.carregar_contatos()
 while True:
     funcoes.limpar_terminal()
     funcoes.menu()
-
-    opcao_usuario = int(input('Digite um número: '))
-    funcoes.limpar_terminal()
-
+    try:
+        opcao_usuario = int(input('Digite um número: '))
+    except ValueError:
+        print('Entrada inválida! Digite um número ou "N" para cancelar.')
+        input('Aperte ENTER para continuar...')
+        continue
+    
     match opcao_usuario:
         case 1:
             funcoes.limpar_terminal()
