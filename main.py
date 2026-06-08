@@ -1,10 +1,14 @@
-import funcoes
+import funcoes #Importa as funções utilizadas pelo sistema
 
 contatos = funcoes.carregar_contatos()
+
+
+# Loop principal do programa
+# Continua executando até que o usuário escolha sair
 while True:
     funcoes.limpar_terminal()
     funcoes.menu()
-    try:
+    try: # Verifica e trata erros de input
         opcao_usuario = int(input('Digite um número: '))
     except ValueError:
         print('Entrada inválida! Digite um número ou "N" para cancelar.')
