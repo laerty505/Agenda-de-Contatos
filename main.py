@@ -33,7 +33,10 @@ while True:
             funcoes.editar_contato(contatos)
         case 5:
             funcoes.limpar_terminal()
-            print('Encerrando...')
+            funcoes.buscar_contato(contatos)
+        case 6:
+            funcoes.limpar_terminal()
+            print("Encerrando...")
             break
         case _:
             funcoes.limpar_terminal()

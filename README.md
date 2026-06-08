@@ -51,7 +51,8 @@ Escolha uma Opção!
 2 - Listar Contatos
 3 - Excluir contatos
 4 - Editar Contatos
-5 - Sair
+5 - Buscar por nome
+6 - Sair
 
 Digite um número: 1
 

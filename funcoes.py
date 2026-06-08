@@ -13,7 +13,8 @@ def menu():
     print("2 - Listar Contatos")
     print("3 - Excluir contatos")
     print('4 - Editar Contatos ')
-    print('5 - Sair')
+    print('5 - Buscar pelo nome')
+    print('6 - Sair')
 
     
 
@@ -166,3 +167,28 @@ def carregar_contatos(): # Lê os contatos armazenados no arquivo e recria a lis
                 contatos.append(contato)
 
     return contatos
+
+def buscar_contato(contatos): # Busca contatos pelo nome (parcial ou completo)
+    if not contatos: # Verifica se a lista está vazia
+        print('Não há contatos cadastrados.')
+        input('Aperte ENTER para continuar...')
+        return
+
+    termo = input('Digite o nome (ou parte dele) para buscar: ').strip().lower()
+    limpar_terminal()
+
+    # Percorre a lista e coleta os que batem com o termo buscado
+    resultados = [c for c in contatos if termo in c[0].lower()]
+
+    if not resultados: # Nenhum contato encontrado
+        print(f'Nenhum contato encontrado com "{termo}".')
+    else:
+        print(f'{len(resultados)} contato(s) encontrado(s):\n')
+        for contato in resultados: # Exibe cada resultado encontrado
+            print(f'Nome: {contato[0]}')
+            print(f'Telefone: {contato[1]}')
+            print(f'Email: {contato[2]}')
+            print()
+
+    input('Aperte ENTER para continuar...')
+    limpar_terminal()
