@@ -1,6 +1,6 @@
 import funcoes #Importa as funções utilizadas pelo sistema
 
-contatos = funcoes.carregar_contatos()
+contatos = funcoes.carregar_contatos() #Lista principal onde os contatos são armazenados durante a execução
 
 
 # Loop principal do programa

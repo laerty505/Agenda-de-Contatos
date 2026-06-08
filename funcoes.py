@@ -2,7 +2,7 @@ import os # Importa o módulo para manipulação de arquivos
 
 
 
-ARQUIVO = "contatos.txt" #Lista principal onde os contatos são armazenados durante a execução
+ARQUIVO = "contatos.txt" 
 
 def menu():
     print("=====AGENDA DE CONTATOS=====")
@@ -152,7 +152,7 @@ def salvar_contatos(contatos): # Salva todos os contatos no arquivo contatos.tx
             arquivo.write(linha + "\n")
 
 def carregar_contatos(): # Lê os contatos armazenados no arquivo e recria a lista
-    contatos = []
+    contatos = [] 
 
     if not os.path.exists(ARQUIVO): # Verifica se o arquivo existe antes de tentar ler
         return contatos
