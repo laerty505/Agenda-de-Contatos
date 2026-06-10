@@ -6,10 +6,11 @@ Projeto final da disciplina de Lógica de Programação. Uma agenda de contatos 
 
 ## ✨ Funcionalidades
 
-- **Cadastrar** novo contato (nome, telefone e e-mail)
+- **Cadastrar** novo contato (nome, telefone, e-mail e endereço) 
 - **Listar** todos os contatos salvos
 - **Editar** um contato existente pelo índice
 - **Excluir** um contato pelo índice
+  **Buscar por nome** Digitando o nome do contato
 - **Persistência** — os dados são salvos em arquivo `.txt` e mantidos entre execuções
 
 ---
@@ -34,7 +35,7 @@ Projeto_agenda_contatos/
 3. Execute o arquivo principal:
 
 ```bash
-python main.py
+python3 main.py
 ```
 
 O arquivo `contatos.txt` será criado automaticamente na primeira vez que um contato for cadastrado.
@@ -59,6 +60,7 @@ Digite um número: 1
 Digite o nome: Maria Silva
 Digite o telefone: 81 99999-0000
 Digite o email: maria@email.com
+Digite o endereço: Rua Hipotética, nº123
 
 Cadastro efetuado com sucesso!
 ```
@@ -74,5 +76,6 @@ Cadastro efetuado com sucesso!
 ---
 
 ## 👨‍💻 Autor
-Laerty Batista de Santana Silva - IFPE 
-Desenvolvido como projeto final de Lógica de Programação.
+Laerty Batista de Santana Silva - IFPE
+Projeto desenvolvido individualmente. Responsável por toda a arquitetura do sistema, codificação estruturada em módulos, tratamento de exceções, persistência de dados em arquivos e documentação.
+

@@ -23,6 +23,7 @@ def listar_contatos(contatos): # Exibe todos os contatos cadastrados
         print(f'Nome: {contato[0]}')
         print(f'Telefone: {contato[1]}')
         print(f'Email: {contato[2]}')
+        print(f'Endereço: {contato[3]}')
         print()
 
 
@@ -31,13 +32,14 @@ def cadastrar(contatos): # Solicita os dados do novo contato e adiciona à lista
     nome = input('Digite o nome: ')
     telefone = input('Digite o telefone: ')
     email = input('Digite o email: ') # Coleta as informações do contato
+    endereco = input('Digite o endereço: ')
 
     limpar_terminal()
     print('Cadastro efetuado com sucesso!')
     input('Aperte ENTER para continuar...')
     limpar_terminal()
 
-    novo_contato = [nome, telefone, email]
+    novo_contato = [nome, telefone, email, endereco]
     contatos.append(novo_contato) # Adiciona o contato à lista
     salvar_contatos(contatos) # Atualiza o arquivo após a edição
 
@@ -97,6 +99,7 @@ def mostrar_indice_contato(contatos): # Exibe os índices da lista contatos
         print(f'Contato: {nome[0]}')
         print(f'Telefone: {nome[1]}')
         print(f'Email: {nome[2]}')
+        print(f'Endereço: {nome[3]}')
         print()
 
 
@@ -138,8 +141,9 @@ def editar_contato(contatos): # Permite alterar os dados de um contato existente
         nome = input('Digite o novo nome: ')
         telefone = input('Digite o novo telefone: ')
         email = input('Digite o novo email: ')
+        endereco = input('Digite o novo endereço: ')
 
-        contatos[indice] = [nome, telefone, email] # Salva o contato na lista
+        contatos[indice] = [nome, telefone, email, endereco] # Salva o contato na lista
         salvar_contatos(contatos) # Atualiza o arquivo após a edição
         print(f'O contato {nome} foi editado com sucesso!')
         input('Digite ENTER... Para continuar')
@@ -188,6 +192,7 @@ def buscar_contato(contatos): # Busca contatos pelo nome (parcial ou completo)
             print(f'Nome: {contato[0]}')
             print(f'Telefone: {contato[1]}')
             print(f'Email: {contato[2]}')
+            print(f'Endereço: {contato[3]}')
             print()
 
     input('Aperte ENTER para continuar...')
